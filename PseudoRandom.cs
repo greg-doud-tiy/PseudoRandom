@@ -9,6 +9,19 @@ namespace GregoryDoud {
 	public class PseudoRandom {
 		static Random rnd = null;
 		/// <summary>
+		/// Returns a sequence of ints in random order
+		/// </summary>
+		public static int[] GetIntSequence(int max = int.MaxValue) {
+			List<int> ints = new List<int>();
+			while(ints.Count < max) {
+				int anInt = GetInt(max);
+				if(!ints.Contains(anInt)) {
+					ints.Add(anInt);
+				}
+			}
+			return ints.ToArray();
+		}
+		/// <summary>
 		/// Returns a set of integers between 1 & max inclusive
 		/// </summar>
 		public static int[] GetIntSet(int count = 10, int max = int.MaxValue) {
